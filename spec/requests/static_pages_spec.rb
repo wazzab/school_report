@@ -9,10 +9,18 @@ require 'spec_helper'
     end
     
   describe "help page" do
-    it "Should have the content 'Helpy'" do
+    it "Should have the content 'Help'" do
       visit '/static_pages/help'  
-      page.should have_content('helpy')
+      page.should have_content('help')
     end
   end
+  
+  describe "About page" do
+    it "should have the content 'About Us'" do
+      visit '/static_pages/about'
+      page.should have_content('About Us')
+    end
+  end
+  
   
 end
