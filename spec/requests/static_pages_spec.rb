@@ -5,13 +5,17 @@ describe "Static Pages" do
   let(:base_title) {"School Report Forum"}
   
   describe "Home page" do
-    it "should have the content 'sample App'" do
+    it "should have the h1 'School Report Forum'" do
       visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Sample App')
+      page.should have_selector('h1', :text => "School Report Forum")
     end
-    it "should have the title 'Home'" do
+    it "should have the title 'School Report Forum'" do
       visit '/static_pages/home'
-      page.should have_selector('title', :text => "#{base_title} | Home")
+      page.should have_selector('title', :text => "School Report Forum")
+    end
+    it "should not have a custom page title" do
+      visit 'static_pages/home'
+      page.should_not have_selector('title', :text => '| Home')
     end
   end
     
