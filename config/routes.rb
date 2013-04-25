@@ -1,5 +1,8 @@
 SchoolReport::Application.routes.draw do
 
+  get "users/new"
+  match '/registration', to: 'users#new'
+
   root to: 'static_pages#home'
 
   match '/help',    to: 'static_pages#help'
@@ -8,6 +11,7 @@ SchoolReport::Application.routes.draw do
 
   match '/contact', to: 'static_pages#contact_us'
 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
