@@ -4,6 +4,8 @@ gem 'rails', '3.2.13'
 
 gem 'bootstrap-sass', '2.1'
 
+gem 'bcrypt-ruby', '3.0.1'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -12,6 +14,9 @@ group :development, :test do
   gem 'rspec-rails', '2.11.0'
 end
 
+group :development do
+  gem 'annotate', '2.5.0'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
