@@ -1,0 +1,20 @@
+<%= form_for(@topic) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.label :region %>
+  <%= f.text_field :region %>
+  
+  <%= f.label :school_type %>
+  <%= f.text_field :school_type %>
+  
+  <%= f.label :school_name %>
+  <%= f.text_field :school_name %>
+  
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Create a new topic..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,6 +1,7 @@
 SchoolReport::Application.routes.draw do
   resources :users  
   resources :sessions, only: [:new, :create, :destroy]
+  resources :topics, only: [:create, :destroy]
   
   match '/registration', to: 'users#new'
   match '/signin', to: 'sessions#new'

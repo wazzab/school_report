@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429123331) do
+ActiveRecord::Schema.define(:version => 20130430103435) do
+
+  create_table "topics", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "region"
+    t.string   "school_type"
+    t.string   "school_name"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "topics", ["region"], :name => "index_topics_on_region"
+  add_index "topics", ["school_name"], :name => "index_topics_on_school_name"
+  add_index "topics", ["school_type"], :name => "index_topics_on_school_type"
+  add_index "topics", ["title"], :name => "index_topics_on_title"
+  add_index "topics", ["user_id"], :name => "index_topics_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,10 @@
+<li>
+  <div class="title"> <%= topic.title.upcase %></div>
+  <span class="region"><%= topic.region %></span>
+  <span class="school_type"><%= topic.school_type %></span>
+  <span class="school_name"><%= topic.school_name %></span>
+  <span class="content"><%= topic.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(topic.created_at) %> ago.
+  </span>
+</li>
