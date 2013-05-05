@@ -7,8 +7,7 @@
   		<%= @user.name %>
 	  </h1>
 	</section>
-  </aside>
-  
+  </aside> 
   <div class="span8">
     <% if @user.topics.any? %>
       <h3>Topics (<%= @user.topics.count %>)</h3>
@@ -18,5 +17,4 @@
       <%= will_paginate @topics %>
     <% end%>
   </div>
-  
 </div>

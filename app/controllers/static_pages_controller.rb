@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
   def home
-    @topic = current_user.topics.build if signed_in?
+    @user = current_user
+    if params[:search_text]
+      @search_results = Topic.paginate(page: params[:page]).where("title LIKE (?)", "%#{params[:search_text]}%")
+    else
+      @search_results = Topic.paginate(page: params[:page]).per_page(10).where("title LIKE '%' ")
+    end
   end
 
   def help

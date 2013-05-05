@@ -7,5 +7,11 @@ class Topic < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
   
+  def self.search(search)
+    if search
+      where 'name LIKE ?', "%#{search}"
+    end
+  end
+  
   default_scope order: 'topics.created_at DESC'
 end

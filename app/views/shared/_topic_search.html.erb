@@ -1,0 +1,16 @@
+<div class="row">  
+  <%= form_tag({}, :method => "get", :class => "navbar-search") do %>
+    <%= text_field_tag :search_text, nil, :placeholder => 'Search',  :class => "search-query span6" %>
+    <%= submit_tag "Search", :class => "btn btn-medium btn-primary" %>
+  <% end %>  
+</div>
+<div class="row">
+  <div class="span12">
+    <h3>(<%= @search_results.count %>)Results</h3>
+      <%= will_paginate @search_results %>
+    <ol class="topics">
+      <%= render @search_results %>
+    </ol>
+    <%= will_paginate @search_results %>
+  </div>
+</div>

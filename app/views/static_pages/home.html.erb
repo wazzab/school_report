@@ -1,24 +1,26 @@
-<% if signed_in? %>
-  <div class="row">
-    <aside class="span8">
-      <section>
-        <%= render 'shared/user_info'%>
-      </section>
-      <section>
-        <%= render 'shared/topic_form'%>
-      </section>
-    </aside>
-  </div>
-<% else %>
-
-  <div class="center hero_unit">
+<div class="center hero_unit">
   	<h1>School Report Forum</h1>
   	<h2>
   		This is the home page for the
      	<a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    	sample application.
-    </h2>
+    	sample application.    	
+    </h2>    
+</div>
+<div class="row">
+  <% if signed_in? %>
+  <span class="span10">
+    <%= render 'shared/user_info'%>
+  </span>
+  <span class="span2">
+    <%= link_to "Start a new topic!", new_topic_path, class: "btn btn-large btn-primary" %>
+  </span>
+</div>
+
+  <% else %>
+  <div class="row center">
     <%= link_to "Sign up now!", registration_path, class: "btn btn-large btn-primary" %>
   </div>
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-<% end %>
+  <% end %>
+  
+<%= render 'shared/topic_search'%>
+
