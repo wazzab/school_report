@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
     if params[:search_text]
       @search_results = Topic.paginate(page: params[:page]).where("title LIKE (?)", "%#{params[:search_text]}%")
     else
-      @search_results = Topic.paginate(page: params[:page]).per_page(10).where("title LIKE '%' ")
+      #@search_results = Topic.paginate(page: params[:page]).first(10)
     end
   end
 

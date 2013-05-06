@@ -6,11 +6,13 @@
 </div>
 <div class="row">
   <div class="span12">
+    <% if @search_results %>
     <h3>(<%= @search_results.count %>)Results</h3>
       <%= will_paginate @search_results %>
     <ol class="topics">
       <%= render @search_results %>
     </ol>
     <%= will_paginate @search_results %>
+    <% end%>
   </div>
 </div>
